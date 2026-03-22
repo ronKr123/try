@@ -235,3 +235,19 @@ transform: scale(1.1);
     transform: scale(1.05); /* 🔥 כרטיס מרכזי טיפה גדול */
   }
 }
+
+@media screen and (max-width: 768px) {
+
+  .swiper {
+    direction: rtl; /* 🔥 זה הקסם */
+  }
+
+  .card__content {
+    margin-inline: 0;
+    overflow: visible; /* כדי לראות הצצה */
+  }
+
+  .swiper-slide {
+    width: auto;
+  }
+}

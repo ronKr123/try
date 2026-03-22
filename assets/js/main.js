@@ -3,9 +3,9 @@ let swiperCards = new Swiper(".card__content", {
   loop: true,
   spaceBetween: 32,
   grabCursor: true,
-  slidesPerView: 1.1, // 🔥 כרטיס אחד + הצצה
+  slidesPerView: 1.2, // 🔥 כרטיס אחד + הצצה
 
-  centeredSlides: true, // 🔥 ממקם באמצע
+  centeredSlides: false, // 🔥 ממקם באמצע
   autoplay: {
     delay: 3000, // כל כמה זמן מתחלף (במילישניות)
     disableOnInteraction: false, // לא עוצר אחרי לחיצה
