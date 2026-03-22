@@ -1,0 +1,467 @@
+.people-slider-component {
+    position: relative;
+    margin-bottom: 140px;
+}
+
+    .people-slider-component .title {
+        display: none;
+        font-family: "DavidLibre", sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .people-slider-component .control-buttons {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+        .people-slider-component .control-buttons .prev-btn,
+        .people-slider-component .control-buttons .next-btn {
+            position: absolute;
+        }
+
+        .people-slider-component .control-buttons .prev-btn {
+            right: -25px;
+        }
+
+        .people-slider-component .control-buttons .next-btn {
+            left: -25px;
+        }
+
+    .people-slider-component .dots-container {
+        display: block;
+        margin-top: 24px;
+    }
+
+        .people-slider-component .dots-container ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .people-slider-component .dots-container ul li {
+                margin: 0 4px;
+            }
+
+                .people-slider-component .dots-container ul li button {
+                    font-size: 0;
+                    width: 10px;
+                    height: 10px;
+                    background: #6A8290;
+                    border-radius: 50%;
+                    padding: 0;
+                }
+
+                .people-slider-component .dots-container ul li.slick-active button {
+                    background: #fff;
+                }
+
+.people-slider .slick-list {
+    display: flex;
+    margin: 0 30px;
+}
+
+.people-slider .slick-track {
+    display: flex;
+    margin: 15px 0;
+}
+
+.people-slider .slick-slide {
+    margin: 0 12px;
+}
+
+.people-slider .item {
+    position: relative;
+    background: #13364B;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+    color: #fff;
+}
+
+    .people-slider .item:hover {
+        background: #19445e;
+    }
+
+        .people-slider .item:hover .content .person {
+            transform: scale(1.1);
+        }
+
+        .people-slider .item:hover .content .song-name {
+            color: #f6d95b;
+        }
+
+        .people-slider .item:hover .content .link {
+            color: #fff;
+        }
+
+            .people-slider .item:hover .content .link::after {
+                filter: brightness(0) invert(1);
+            }
+
+            .people-slider .item:hover .content .link::before {
+                content: url('../../SevenOctoberSongs/images/chevron-left.svg');
+                transform: rotate(180deg);
+                display: inline-block;
+                vertical-align: middle;
+                height: 25px;
+                filter: brightness(0) invert(1);
+            }
+
+    .people-slider .item .background-image {
+        background-image: url("../../SevenOctoberSongs/images/slide-background.png");
+        background-size: cover;
+        height: 320px;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .people-slider .item .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+        .people-slider .item .content .person {
+            padding-top: 27px;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .people-slider .item .content .name {
+            font-size: 24px;
+            line-height: 1.17;
+            margin-bottom: 3px;
+        }
+
+        .people-slider .item .content .song-name {
+            font-size: 46px;
+            font-family: 'DavidLibre', sans-serif;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .people-slider .item .content .song-short-description {
+            font-size: 20px;
+            line-height: 29px;
+            margin-bottom: 8px;
+        }
+
+        .people-slider .item .content .link {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 26px;
+            color: #F6D95B;
+            display: block;
+            margin-top: auto;
+            width: fit-content;
+        }
+
+            .people-slider .item .content .link::after {
+                content: url('../../SevenOctoberSongs/images/chevron-left.svg');
+                display: inline-block;
+                vertical-align: middle;
+                height: 25px;
+            }
+
+    .people-slider .item .text-block {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 20px 40px 40px 40px;
+    }
+
+
+.video-component {
+    margin-bottom: 140px;
+}
+
+    .video-component .title {
+        font-family: "DavidLibre", sans-serif;
+        font-size: 64px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .video-component .video-container {
+        text-align: center;
+    }
+
+        .video-component .video-container iframe {
+            box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.5);
+        }
+
+.social-icons-component {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 60px;
+}
+
+    .social-icons-component .icon {
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        background-size: contain;
+        border-radius: 50%;
+    }
+
+        .social-icons-component .icon.spotify-link {
+            background: url('/assets/SevenOctoberSongs/images/spotify.svg') no-repeat center center;
+        }
+
+            .social-icons-component .icon.spotify-link:hover {
+                background-image: url('/assets/SevenOctoberSongs/images/spotify-hover.svg');
+            }
+
+        .social-icons-component .icon.youtube-link {
+            background: url('/assets/SevenOctoberSongs/images/youtube.svg') no-repeat center center;
+        }
+
+            .social-icons-component .icon.youtube-link:hover {
+                background-image: url('/assets/SevenOctoberSongs/images/youtube-hover.svg');
+            }
+
+        .social-icons-component .icon.instagram-link {
+            background: url('/assets/SevenOctoberSongs/images/instagram.svg') no-repeat center center;
+        }
+
+            .social-icons-component .icon.instagram-link:hover {
+                background-image: url('/assets/SevenOctoberSongs/images/instagram-hover.svg');
+            }
+
+        .social-icons-component .icon.x-link {
+            background: url('/assets/SevenOctoberSongs/images/x.svg') no-repeat center center;
+        }
+
+            .social-icons-component .icon.x-link:hover {
+                background-image: url('/assets/SevenOctoberSongs/images/x-hover.svg');
+            }
+
+        .social-icons-component .icon.facebook-link {
+            background: url('/assets/SevenOctoberSongs/images/facebook.svg') no-repeat center center;
+        }
+
+            .social-icons-component .icon.facebook-link:hover {
+                background-image: url('/assets/SevenOctoberSongs/images/facebook-hover.svg');
+            }
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .people-slider-component .control-buttons .prev-btn {
+        right: -30px;
+    }
+
+    .people-slider-component .control-buttons .next-btn {
+        left: -30px;
+    }
+
+    .people-slider-component .control-buttons {
+        display: block;
+    }
+
+    .people-slider-component .dots-container {
+        display: block;
+    }
+
+    .people-slider .slick-list {
+        margin: 0 15px;
+    }
+
+    .people-slider .item .background-image {
+        height: 300px;
+    }
+
+    .video-component .video-container iframe {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .people-slider-component {
+        margin-bottom: 80px;
+    }
+
+        .people-slider-component .title {
+            display: block;
+        }
+
+        .people-slider-component .control-buttons {
+            display: none;
+        }
+
+        .people-slider-component .dots-container {
+            display: none;
+        }
+
+    .people-slider .slick-list {
+        margin: 0;
+        padding: 0 0 0 240px !important;
+    }
+
+    .people-slider .slick-slide {
+        margin: 0 8px;
+    }
+
+    .people-slider .item .background-image {
+        height: 180px;
+    }
+
+    .people-slider .item .content .person {
+        padding-top: 0;
+    }
+
+    .people-slider .item .content .name {
+        font-size: 18px;
+        line-height: 1.56;
+        margin-bottom: 5px;
+    }
+
+    .people-slider .item .content .song-name {
+        font-size: 34px;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .people-slider .item .content .song-short-description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .people-slider .item .content .link {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+        .people-slider .item .content .link::after {
+            height: 27px;
+        }
+
+    .people-slider .item .text-block {
+        padding: 0 30px 30px 30px;
+    }
+
+    .video-component {
+        margin-bottom: 160px;
+    }
+
+        .video-component .title {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+
+        .video-component .video-container iframe {
+            width: 100%;
+            height: 400px;
+        }
+
+    .social-icons-component {
+        margin-bottom: 80px;
+        padding: 0 30px;
+    }
+
+        .social-icons-component .icon {
+            width: 40px;
+            height: 40px;
+        }
+}
+
+@media screen and (max-width: 767px) {
+    .people-slider-component {
+        margin-bottom: 80px;
+    }
+
+        .people-slider-component .title {
+            display: none;
+        }
+
+        .people-slider-component .control-buttons {
+            display: none;
+        }
+
+        .people-slider-component .dots-container {
+            display: none;
+        }
+
+    .people-slider .slick-list {
+        margin: 0;
+        padding: 0 0 0 80px !important;
+    }
+
+    .people-slider .slick-slide {
+        margin: 0 8px;
+    }
+
+    .people-slider .item .background-image {
+        height: 180px;
+    }
+
+    .people-slider .item .content .person {
+        padding-top: 0;
+    }
+
+    .people-slider .item .content .name {
+        font-size: 18px;
+        line-height: 1.56;
+        margin-bottom: 5px;
+    }
+
+    .people-slider .item .content .song-name {
+        font-size: 34px;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .people-slider .item .content .song-short-description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .people-slider .item .content .link {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+        .people-slider .item .content .link::after {
+            height: 27px;
+        }
+
+    .people-slider .item .text-block {
+        padding: 0 30px 30px 30px;
+    }
+
+    .video-component {
+        margin-bottom: 160px;
+    }
+
+        .video-component .title {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+
+        .video-component .video-container iframe {
+            width: 100%;
+            height: 177px;
+        }
+
+    .social-icons-component {
+        margin-bottom: 80px;
+        padding: 0 30px;
+    }
+
+        .social-icons-component .icon {
+            width: 40px;
+            height: 40px;
+        }
+}

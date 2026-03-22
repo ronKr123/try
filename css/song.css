@@ -1,0 +1,583 @@
+main {
+    margin-bottom: 120px;
+}
+
+.full-width-container {
+    position: relative;
+    margin-top: 100px;
+}
+
+    .full-width-container .author-block {
+        position: absolute;
+        left: 0;
+        width: 650px;
+        height: 680px;
+        background-image: url("../../SevenOctoberSongs/images/banner-author-block.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+
+        .full-width-container .author-block .author-image-block {
+            position: absolute;
+            top: 89px;
+            left: 0;
+            width: 650px;
+            height: 650px;
+            z-index: 2;
+        }
+
+        .full-width-container .author-block .author-image + .tape {
+            position: absolute;
+            top: 4%;
+            right: 17%;
+            width: 145px;
+            height: 141px;
+            background-image: url("../../SevenOctoberSongs/images/tape.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 3;
+        }
+
+.wrapper-container {
+    position: relative;
+    background-image: url("../images/song-background.png"), url("../images/full-container-background.png");
+    background-position: top, bottom;
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+    overflow: hidden;
+}
+
+    .wrapper-container.second {
+        background-image: url("../images/full-container-background.png");
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+.content-container {
+    max-width: 1280px;
+    margin: 67px auto 0 auto;
+}
+
+.to-main-page {
+    color: #f6d95b;
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+    .to-main-page::before {
+        content: url('../../SevenOctoberSongs/images/chevron-left.svg');
+        display: inline-block;
+        vertical-align: middle;
+        height: 25px;
+        transform: rotate(180deg);
+        margin-left: 5px;
+    }
+
+    .to-main-page:hover {
+        color: #fff;
+    }
+
+        .to-main-page:hover::before {
+            content: url('../../SevenOctoberSongs/images/chevron-left-white.svg');
+        }
+
+.song-container {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 140px;
+}
+
+    .song-container .song-info {
+        width: 410px;
+    }
+
+        .song-container .song-info .name {
+            font-size: 24px;
+            line-height: 1.17;
+            margin-bottom: 8px;
+        }
+
+        .song-container .song-info .song-name {
+            font-family: "DavidLibre", sans-serif;
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .song-container .song-info .song-short-description {
+            font-size: 24px;
+            margin-bottom: 48px;
+        }
+
+        .song-container .song-info .spotify-iframe {
+            width: 390px;
+            height: 152px;
+            box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.16);
+            margin-bottom: 48px;
+        }
+
+        .song-container .song-info .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+            .song-container .song-info .actions a {
+                color: #f6d95b;
+                flex: 1 1 100%;
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+                .song-container .song-info .actions a:hover {
+                    color: #fff;
+                }
+
+            .song-container .song-info .actions > a::before {
+                margin-left: 10px;
+                display: inline-block;
+                vertical-align: middle;
+                height: 24px;
+                width: 24px;
+            }
+
+            .song-container .song-info .actions .watch::before {
+                content: url('../../SevenOctoberSongs/images/video.svg');
+            }
+
+            .song-container .song-info .actions .listen-article::before {
+                content: url('../../SevenOctoberSongs/images/headphones.svg');
+            }
+
+            .song-container .song-info .actions .story::before {
+                content: url('../../SevenOctoberSongs/images/video.svg');
+            }
+
+            .song-container .song-info .actions .watch:hover::before,
+            .song-container .song-info .actions .listen-article:hover::before,
+            .song-container .song-info .actions .story:hover::before {
+                filter: brightness(0) invert(1);
+            }
+
+    .song-container .song-lyrics {
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+.history-container {
+    display: flex;
+    margin-bottom: 140px;
+}
+
+    .history-container .text-block {
+        width: calc(100% - 384px);
+    }
+
+    .history-container .author-image-block {
+        position: relative;
+        width: 384px;
+    }
+
+        .history-container .author-image-block .tape {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 138px;
+            height: 147px;
+            background-image: url("../../SevenOctoberSongs/images/author-tape.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .history-container .author-image-block img {
+            width: 384px;
+            height: 384px;
+        }
+
+    .history-container .person-info {
+        margin-bottom: 40px;
+    }
+
+    .history-container .name {
+        font-family: "DavidLibre", sans-serif;
+        font-size: 64px;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    .history-container .life-years {
+        font-family: "DavidLibre", sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        color: #f6d95b;
+        margin-bottom: 16px;
+    }
+
+    .history-container .story-text {
+        font-size: 20px;
+        line-height: 1.5;
+        padding-left: 96px;
+    }
+
+    .history-container .listen-article .title {
+        font-family: "DavidLibre", sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 32px;
+    }
+
+    .history-container .listen-article .spotify-iframe {
+        width: 360px;
+        height: 152px;
+        box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.16);
+    }
+
+.people-slider-component .title {
+    display: block;
+}
+
+@media (min-width: 1367px) and (max-width: 1700px) {
+    .full-width-container .author-block {
+        width: calc(33% - 24px);
+        height: 500px;
+    }
+
+        .full-width-container .author-block .author-image-block {
+            width: 486px;
+            height: auto;
+        }
+
+        .full-width-container .author-block .author-image + .tape {
+            top: 0;
+            right: 15%;
+        }
+}
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .full-width-container {
+        margin-top: 60px;
+    }
+
+        .full-width-container .author-block {
+            width: calc(33% - 24px);
+            height: 500px;
+        }
+
+            .full-width-container .author-block .author-image-block {
+                width: auto;
+                height: auto;
+            }
+
+            .full-width-container .author-block .author-image + .tape {
+                top: 5%;
+                right: 17%;
+                width: 109px;
+                height: 106px;
+            }
+
+    .wrapper-container {
+        background-image: url("../images/song-background-laptop.png"), url("../images/full-container-background-laptop.png");
+    }
+
+        .wrapper-container.second {
+            background-image: url("../images/full-container-background-laptop.png");
+        }
+
+    .content-container {
+        max-width: 100%;
+        padding: 0 43px;
+    }
+
+    .to-main-page {
+        margin-bottom: 100px;
+    }
+
+    .song-container .song-info {
+        width: calc(33% - 24px);
+    }
+
+        .song-container .song-info .spotify-iframe {
+            width: 90%;
+        }
+
+    .song-container .song-lyrics {
+        width: 35%;
+    }
+
+    .history-container .story-text {
+        padding-left: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .full-width-container {
+        margin-top: 60px;
+    }
+
+        .full-width-container .author-block {
+            width: 273px;
+            height: 288px;
+            background-image: url("../../SevenOctoberSongs/images/banner-author-block.png");
+        }
+
+            .full-width-container .author-block .author-image-block {
+                top: 44px;
+                width: 273px;
+                height: 273px;
+            }
+
+            .full-width-container .author-block .author-image + .tape {
+                top: 5%;
+                right: 17%;
+                width: 61px;
+                height: 59px;
+            }
+
+    .wrapper-container {
+        background-image: url("../images/song-background-tablet.png"), url("../images/full-container-background-tablet.png");
+    }
+
+        .wrapper-container.second {
+            background-image: url("../images/full-container-background-tablet.png");
+        }
+
+    .content-container {
+        max-width: 100%;
+        margin: 30px auto 0 auto;
+        padding: 0 30px;
+    }
+
+    .to-main-page {
+        margin-bottom: 86px;
+    }
+
+    .song-container {
+        gap: 80px;
+        margin-bottom: 80px;
+        flex-wrap: wrap;
+    }
+
+        .song-container div {
+            flex: 1 1 100%;
+        }
+
+        .song-container .song-info {
+            width: 100%;
+        }
+
+            .song-container .song-info .song-name {
+                font-size: 40px;
+                margin-bottom: 16px;
+            }
+
+            .song-container .song-info .song-short-description {
+                font-size: 20px;
+                margin-bottom: 32px;
+            }
+
+            .song-container .song-info .spotify-iframe {
+                width: 100%;
+                margin-bottom: 32px;
+            }
+
+            .song-container .song-info .actions {
+                flex-wrap: wrap;
+                gap: 0;
+                row-gap: 24px;
+            }
+
+                .song-container .song-info .actions > a {
+                    flex: 1 1 calc(33.3% - 24px);
+                    flex-direction: column;
+                    border-left: 1px solid #19445e;
+                    padding: 0 8px;
+                    text-align: center;
+                    gap: 10px;
+                    font-size: 16px;
+                }
+
+                .song-container .song-info .actions a:last-child {
+                    border-left: 0;
+                }
+
+                .song-container .song-info .actions a::before {
+                    margin-left: 0;
+                }
+
+        .song-container .song-lyrics {
+            font-size: 20px;
+        }
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        margin-bottom: 20px;
+    }
+
+    .history-container {
+        flex-direction: column-reverse;
+        margin-bottom: 80px;
+        gap: 8px;
+    }
+
+        .history-container .text-block {
+            width: 100%;
+        }
+
+        .history-container .author-image-block {
+            width: 100%;
+        }
+
+            .history-container .author-image-block .tape {
+                display: none;
+            }
+
+            .history-container .author-image-block img {
+                width: 180px;
+                height: 180px;
+            }
+
+        .history-container .person-info {
+            margin-bottom: 24px;
+        }
+
+        .history-container .name {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        .history-container .life-years {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .history-container .story-text {
+            padding-left: 0;
+        }
+
+        .history-container .listen-article .title {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .history-container .listen-article .spotify-iframe {
+            width: 100%;
+        }
+
+    .people-slider-component .title {
+        display: block;
+    }
+
+    .people-slider {
+        margin: 0 -30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .full-width-container {
+        margin-top: 60px;
+    }
+
+        .full-width-container .author-block {
+            width: 282px;
+            height: 347px;
+            background-image: url("../../SevenOctoberSongs/images/banner-author-block-mobile.png");
+        }
+
+            .full-width-container .author-block .author-image-block {
+                top: 60px;
+                width: 269px;
+                height: 269px;
+            }
+
+            .full-width-container .author-block .author-image + .tape {
+                top: unset;
+                right: unset;
+                left: 14%;
+                bottom: -2%;
+                width: 87px;
+                height: 57px;
+                transform: rotate(115deg);
+            }
+
+    .wrapper-container {
+        background-image: url("../images/song-background-mobile.png"), url("../images/full-container-background-mobile.png");
+    }
+
+        .wrapper-container.second {
+            background-image: url("../images/full-container-background-mobile.png");
+        }
+
+    .content-container {
+        max-width: 100%;
+        margin: 30px auto 0 auto;
+        padding: 0 30px;
+    }
+
+    .to-main-page {
+        margin-bottom: 264px;
+    }
+
+    .song-container {
+        gap: 80px;
+        margin-bottom: 80px;
+        flex-wrap: wrap;
+    }
+
+        .song-container div {
+            flex: 1 1 100%;
+        }
+
+        .song-container .song-info {
+            width: 100%;
+        }
+
+            .song-container .song-info .song-name {
+                font-size: 40px;
+                margin-bottom: 16px;
+            }
+
+            .song-container .song-info .song-short-description {
+                font-size: 20px;
+                margin-bottom: 32px;
+            }
+
+            .song-container .song-info .spotify-iframe {
+                width: 100%;
+                margin-bottom: 32px;
+            }
+
+            .song-container .song-info .actions {
+                flex-wrap: wrap;
+                gap: 0;
+                row-gap: 24px;
+            }
+
+                .song-container .song-info .actions > a {
+                    flex: 1 1 calc(33.3% - 24px);
+                    flex-direction: column;
+                    border-left: 1px solid #19445e;
+                    padding: 0 8px;
+                    text-align: center;
+                    gap: 10px;
+                    font-size: 16px;
+                }
+
+                .song-container .song-info .actions a:last-child {
+                    border-left: 0;
+                }
+
+                .song-container .song-info .actions a::before {
+                    margin-left: 0;
+                }
+
+        .song-container .song-lyrics {
+            font-size: 20px;
+        }
+}

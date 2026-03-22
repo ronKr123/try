@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>דף נחיתה - מתי כספי</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<style>
+  :root{
+    --page-bg: #292d52;         /* רקע כללי */
+    --accent: #e6f0ff;         /* צבע כותרת על התמונה */
+    --muted: rgba(255,255,255,0.88);
+    --gutter: clamp(16px, 5vw, 56px);
+    --max-width: 1100px;
+
+    /* hero */
+    --banner-scale: 0.995;
+    --blur-height: 32%;
+    --blur-strength: 10px;
+  }
+
+  *{box-sizing: border-box}
+  html,body{height:100%; margin:0; padding:0; font-family:"Rubik",sans-serif; background:var(--page-bg); color:var(--muted); -webkit-font-smoothing:antialiased}
+  a{color:inherit; text-decoration:none}
+
+  /* כללי קונטיינר מרכזי */
+  .container{
+    width:100%;
+    max-width:var(--max-width);
+    margin:0 auto;
+    padding: 28px var(--gutter);
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    position: relative;
+    width:100%;
+    overflow:hidden;
+  }
+
+  .hero img{
+    display:block;
+    width:100%;
+    height:auto;
+    transform: scale(var(--banner-scale));
+    transform-origin:center top;
+    object-fit:cover;
+  }
+
+
+  /* טקסט גדול מעל התמונה */
+  .hero-text{
+    position:absolute;
+    bottom: 14%;
+    right: var(--gutter);
+    text-align: right;
+    z-index: 3;
+  }
+
+  .hero-text h1{
+    margin:0;
+    color: var(--accent);
+    font-size: clamp(28px, 6vw, 72px);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  }
+
+  .hero-sub{
+    display:block;
+    margin-top:8px;
+    color: rgba(255,255,255,0.9);
+    font-weight:400;
+    font-size: clamp(14px, 2.8vw, 20px);
+    max-width: 70ch;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  }
+
+  /* ================= תיבות תוכן ================= */
+  section.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.02));
+  text-align: right;
+  margin: 28px auto; /* מרכז */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+
+  width: 100%;
+  max-width: 1100px; /* שולט כמה רחב יהיה */
+  }
+
+  h2.section-title{
+    margin: 0 0 12px 0;
+    font-size: clamp(20px, 3.6vw, 34px);
+    color: #fff;
+    font-weight: 700;
+  }
+
+  p.lead{
+    margin:0;
+    color: rgba(255,255,255,0.92);
+    line-height:1.7;
+    font-size: clamp(14px, 2.4vw, 18px);
+  }
+
+  /* מסגרת מפרידה דקורטיבית */
+  .divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin: 34px 0;
+    gap:12px;
+  }
+  .divider .line{
+    height:2px;
+    flex:1;
+    background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+  }
+  .divider .badge{
+    background: rgba(255,255,255,0.06);
+    color:var(--accent);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight:700;
+  }
+
+  /* ============== iframes רספונסיביים ============== */
+  .embed-wrap{
+    position:relative;
+    width:100%;
+    padding-top:56.25%; /* 16:9 */
+    overflow:hidden;
+    border-radius:8px;
+    background:rgba(0,0,0,0.04);
+  }
+  .embed-wrap iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+  }
+
+  /* ============== כפתורי סושיאל מרכזיים ============== */
+  .socials{
+    display:flex;
+    gap: clamp(14px, 6vw, 28px);
+    justify-content:center;
+    align-items:center;
+    margin: 30px 0 8px 0;
+  }
+
+  .socials a{
+    display:inline-grid;
+    place-items:center;
+    width: clamp(56px, 9vw, 90px);
+    height: clamp(56px, 9vw, 90px);
+    border-radius:50%;
+    background: #fff;
+    color: #111;
+    text-decoration:none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+
+  .socials a .bi{
+    font-size: clamp(20px, 4vw, 34px);
+  }
+
+  .socials a:hover{
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 30px rgba(0,0,0,0.28);
+  }
+
+  /* תווית מתחת הכפתורים */
+  .socials-caption{
+    text-align:center;
+    color:rgba(255,255,255,0.8);
+    font-size:14px;
+    margin-top:8px;
+  }
+
+  /* קטגוריות ותצוגה כללית */
+  footer{
+    margin-top:36px;
+    padding: 30px var(--gutter);
+    color: rgba(255,255,255,0.7);
+    text-align:center;
+    font-size:13px;
+  }
+
+  /* ריספונסיביות נוספת */
+  @media (max-width:800px){
+    .hero-text{ bottom:10%; right: calc(var(--gutter) * 0.6) }
+    .hero-text h1{ font-size: clamp(26px, 10vw, 48px) }
+    .container{ padding: 20px clamp(12px,6vw,28px) }
+  }
+
+  @media (max-width:480px){
+    .hero-text{ bottom:8%; right: 18px }
+    .hero-sub{ display:block; font-size: 14px; max-width: 100% }
+    .socials a{ width: clamp(48px, 14vw, 68px); height: clamp(48px, 14vw, 68px) }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <img src="https://glz.co.il/media/68493/%D7%91%D7%90%D7%A0%D7%A8-%D7%90%D7%AA%D7%A8-10.png?anchor=center&mode=crop&width=1366&height=350&rnd=134150148730000000" alt="Banner image">
+    <div class="hero-text" role="heading" aria-level="1">
+      <h1>נפרדים ממתי כספי</h1>
+      <span class="hero-sub">המלחין והיוצר מתי כספי ז"ל — מעגל כבוד וזיכרון, אוספים ארכיונים, תכניות מיוחדות ופודקאסטים.</span>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">
+      <div class="line"></div>
+      <div class="badge">שיחחחחחחחחחחחחחחחחחחח יכניות</div>
+      <div class="line"></div>
+    </div>
+
+  <!-- תוכן ראשי בתוך קונטיינר -->
+  <main class="container">
+
+    <section class="card" aria-labelledby="title-archive">
+
+      <div class="embed-wrap" aria-hidden="false">
+        <iframe src="https://omny.fm/shows/caspi/playlists/podcast/embed?media=audio&size=wide&style=cover&image=1&description=1&download=0&playlistImages=1&playlistShare=0&share=0&subscribe=0" title="ארכיון גל"צ - מתי כספי" allow="autoplay; clipboard-write"></iframe>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="false">
+      <div class="line"></div>
+      <div class="badge">תכניות גלגלצ ביום שידורים מיוחד לכבוד מתי כספי</div>
+      <div class="line"></div>
+    </div>
+
+    <section class="card" aria-labelledby="title-programs">
+
+      <div class="embed-wrap">
+        <iframe src="https://omny.fm/shows/caspi/playlists/podcast/embed?media=audio&size=wide&style=cover&image=1&description=1&download=0&playlistImages=1&playlistShare=0&share=0&subscribe=0" title="תכניות לכבוד מתי כספי" allow="autoplay; clipboard-write"></iframe>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <div class="line"></div>
+      <div class="badge">פודקסטים</div>
+      <div class="line"></div>
+    </div>
+
+    <section class="card" aria-labelledby="title-podcasts">
+
+      <div class="embed-wrap">
+        <iframe src="https://omny.fm/shows/caspi/playlists/podcast/embed?media=audio&size=wide&style=cover&image=1&description=1&download=0&playlistImages=1&playlistShare=0&share=0&subscribe=0" title="תכניות לכבוד מתי כספי" allow="autoplay; clipboard-write"></iframe>
+      </div>
+    </section>
+
+      <!-- כפתורי סושיאל / קישורים חיצוניים -->
+      <div class="socials" role="navigation" aria-label="קישורים חיצוניים">
+        <!-- החליפו את href בקישורים רלוונטיים -->
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube - פתח">
+          <i class="bi bi-youtube"></i>
+        </a>
+
+        <a href="https://music.apple.com/" target="_blank" rel="noopener" aria-label="Apple Music - פתח">
+          <i class="bi bi-apple"></i>
+        </a>
+
+        <a href="https://open.spotify.com/" target="_blank" rel="noopener" aria-label="Spotify - פתח">
+          <i class="bi bi-spotify"></i>
+        </a>
+      </div>
+
+    <!-- <footer>
+      &copy; כל הזכויות שמורות — שם הארגון שלך • יצירת קשר: <a href="mailto:info@example.com">info@example.com</a>
+    </footer> -->
+
+  </main>
+
+</body>
+</html>

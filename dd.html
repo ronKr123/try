@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>קרוסלת תמונות מתוקנת</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+  }
+  .swiper {
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+  }
+  .swiper-slide {
+    transition: transform 0.3s ease;
+  }
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .swiper-slide:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
+
+  /* חצים מחוץ לקרוסלה */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 10; /* מעל כל התמונות */
+  }
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+  }
+  .swiper-button-next { right: -50px; }
+  .swiper-button-prev { left: -50px; }
+
+  /* Pagination מתחת לקרוסלה */
+  .swiper-pagination {
+    bottom: -40px !important; 
+    text-align: center;
+    z-index: 10; /* מעל התמונות */
+  }
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    background: whitesmoke;
+    opacity: 1;
+    margin: 0 6px !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #aaa !important;
+  }
+
+
+</style>
+</head>
+<body>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="https://picsum.photos/id/1015/600/400" alt="תמונה 1"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/id/1016/600/400" alt="תמונה 2"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/id/1018/600/400" alt="תמונה 3"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/id/1020/600/400" alt="תמונה 4"></div>
+    <div class="swiper-slide"><img src="https://picsum.photos/id/1024/600/400" alt="תמונה 5"></div>
+  </div>
+  
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <div class="swiper-pagination"></div>
+</div>
+
+<iframe src="https://omny.fm/shows/nifradimmatikaspi/playlists/podcast/embed?media=audio&size=wide&style=cover&image=1&description=1&download=0&playlistImages=1&playlistShare=0&share=0&subscribe=0" allow="autoplay; clipboard-write" width="100%" height="500" frameborder="0" title="נפרדים ממתי כספי"></iframe>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      600: { slidesPerView: 2 },
+      900: { slidesPerView: 3 }
+    }
+  });
+</script>
+
+</body>
+</html>
