@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>דף נחיתה</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Rubik", sans-serif;
+      background: #1887ba;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .landing-page {
+      background-color: #1887ba;
+      background-image: url("https://www.transparenttextures.com/patterns/billie-holiday.png");
+      min-height: auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .gradient {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(180deg, rgba(9, 43, 63, 0) 0%, #a0c6db 100%);
+    }
+
+    .content {
+      padding: 24px clamp(16px, 5vw, 56px);
+    }
+
+    .hero-text {
+      text-align: right;
+      margin-bottom: 32px;
+    }
+
+    .hero-text h1 {
+      margin: 0;
+      color: #fff;
+      font-weight: 800;
+      font-size: clamp(30px, 5vw, 60px);
+      line-height: 1.1;
+      max-width: 20ch;
+      overflow-wrap: break-word;
+    }
+
+    .hero-sub {
+      margin-top: 10px;
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.6;
+      max-width: 60ch;
+      overflow-wrap: break-word;
+    }
+
+    .songs-slider {
+      margin: 30px 0;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #fff;
+      color: #111;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: auto;
+  height: auto;
+  font-size: 3rem;
+  color: var(--second-color);
+
+  position: absolute;     /* 👈 חשוב */
+  top: 50%;
+  transform: translateY(-50%);
+
+  padding: 0;             /* 👈 במקום 800px */
+}
+
+    @media (max-width: 768px) {
+      .hero img {
+        height: 35vh;
+        object-fit: cover;
+      }
+
+      .hero-text h1 {
+        font-size: clamp(28px, 9vw, 44px);
+        max-width: 12ch;
+      }
+
+      .hero-sub {
+        font-size: 18px;
+        max-width: 100%;
+      }
+
+      .content {
+        padding: 18px 16px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="landing-page">
+    <div class="hero">
+      <img src="1d88eebe-8542-4397-a17c-9c44dd50cc1f.png" alt="" draggable="false">
+      <div class="gradient"></div>
+    </div>
+
+    <div class="content">
+      <div class="hero-text">
+        <h1>55 שנה לפסטיבל שירי הילדים</h1>
+        <p class="hero-sub">
+          דורות גדלו על הקלאסיקות של פסטיבל שירי הילדים, שקשה להאמין שעברו 55 שנה מאז עלה. בתכנית מיוחדת הכוכבים מאז וילדי הפלא החדשים מחדשים את שירי הילדות יחד 🪅
+        </p>
+      </div>
+
+      <section class="songs-slider">
+        <div class="card__container swiper">
+          <div class="card__content">
+            <div class="swiper-wrapper">
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="ילדיסקו.jpg" alt="image" class="card__img">
+                </div>
+              </article>
+
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="למה ככה.jpg.jpeg" alt="image" class="card__img">
+                </div>
+              </article>
+
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="1.jpeg" alt="image" class="card__img">
+                </div>
+              </article>
+
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="2.jpeg" alt="image" class="card__img">
+                </div>
+              </article>
+
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="3.jpeg" alt="image" class="card__img">
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="swiper-button-next">
+            <i class="bi bi-chevron-right"></i>
+          </div>
+
+          <div class="swiper-button-prev">
+            <i class="bi bi-chevron-left"></i>
+          </div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <div class="socials">
+        <a href="https://www.youtube.com/watch?v=AeGfVdZqlEg&list=PLx4jClAH_07zUkjMqJC_ugt9ql3bf4z5U&index=1" target="_blank" rel="noopener noreferrer" ><i class="bi bi-youtube"></i></a>
+        <a href="https://omny.fm/shows/special/55-20-12-25" target="_blank" rel="noopener noreferrer" ><i class="bi bi-headphones"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
