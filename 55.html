@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
   <style>
     body {
@@ -201,7 +202,46 @@
     </div>
   </div>
 
-  <script src="assets/js/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <script>
+let swiperCards = new Swiper(".card__content", {
+  loop: true,
+  spaceBetween: 16,
+  grabCursor: true,
+
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1.15,
+      centeredSlides: false, // 🔥 חשוב!
+    },
+    600: {
+      slidesPerView: 2,
+      centeredSlides: false,
+    },
+    968: {
+      slidesPerView: 3,
+      centeredSlides: false,
+    },
+  },
+});
+  </script>
+
 </body>
 </html>

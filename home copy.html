@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="songNew.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>רדיו - להקת סקסטה ורוני אורגד</title>
+    <style>
+        /* איפוס בסיסי והגדרות גופן */
+        body {
+            background-color: #cc9e69; /* צבע הרקע התכול */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* ניווט עליון */
+        .top-nav {
+            margin-bottom: 40px;
+        }
+        
+        .top-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s;
+        }
+
+        .top-nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* גריד מרכזי ל-3 עמודות */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* עמודה ימנית - כותרות ונגן */
+        .right-column h1 {
+            font-size: 4rem;
+            margin: 0 0 10px 0;
+        }
+
+        .right-column h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        .watch-clip-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: opacity 0.3s;
+        }
+
+        .watch-clip-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* עמודה אמצעית - טקסט ושירים */
+        .center-column {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .lyrics {
+            margin-top: 30px;
+        }
+
+        /* עמודה שמאלית - תמונה */
+        .left-column img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            margin-right: 80px;
+        }
+
+        /* עיצוב המודאל (חלון קופץ לווידאו) */
+        .modal {
+    display: none; /* מוסתר כברירת מחדל */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;     /* מרכוז אנכי */
+    justify-content: center; /* מרכוז אופקי */
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+        .modal h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 0;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* יחס 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* רספונסיביות למובייל */
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .right-column, .center-column, .left-column {
+                margin-bottom: 30px;
+            }
+            .watch-clip-btn {
+                margin: 30px auto 0 auto;
+            }
+            .top-nav {
+                text-align: center;
+            }
+        }
+
+/* התאמת ה-container למבנה החדש */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2; /* מוודא שהתוכן תמיד מעל הרקע */
+}
+
+    </style>
+</head>
+<body>
+<header class="hero-section">
+    <div class="container">
+        <nav class="top-nav">
+            <a href="#">&gt; חזרה לעמוד הראשי</a>
+        </nav>
+
+        <main class="main-content">
+            
+            <div class="right-column">
+                <h1 style="font-family: Rubik;">עוד מחכה לאחד חחח יחיי</h1>
+                <h2 style="font-family: Assistant;">להקת סקסטה ורוני אורגד</h2>
+
+                 <iframe style="border-radius:15px; text-align: right;" src="https://omny.fm/shows/songskids55/2adf1f80-0540-421a-8f22-b3b90114cc73/embed?media=audio&size=wide&style=cover&image=1&description=0&download=1&playlistImages=1&playlistShare=1&share=0&subscribe=0" allow="autoplay; clipboard-write" width="100%" height="165" frameborder="0"></iframe>
+
+                <button class="watch-clip-btn" onclick="openModal()">
+                    🎥 לצפייה בקליפ
+                </button>
+            </div>
+
+            <div class="center-column">
+                <p>בשנת 1981 להקת סקסטה שרו את "רדיו" הבלתי נשכח.<br>
+                צירפנו את רוני אורגד להרכב לבצע אותו יחד 📻</p>
+
+                <div class="lyrics">
+                    <p>
+                        מי מעיר אותי עם שח<br>
+                        שר לי בוקר טוב<br>
+                        אם חם או קר או אם רטוב<br>
+                        בדרכי לבית הספר<br>
+                        הוא רץ כמו שעון<br>
+                        קורא אלי מכל חלון
+                    </p>
+                    <p>
+                        הרדיו שלי<br>
+                        עונה לקולי<br>
+                        רדיו נוגן ושר<br>
+                        תן לנו בוקר טוב<br>
+                        נגן לנו ערב טוב<br>
+                        תן לנו לילה טוב<br>
+                        הגן על מה שטוב
+                    </p>
+                </div>
+            </div>
+
+            <div class="left-column">
+                <img src="עיצוב ללא שם (9).png" alt="עודני ילד - שלומית אהרון ורוני ג'בר">
+            </div>
+
+        </main>
+    </div>
+</header>
+    <div class="gradient"></div>
+
+
+    <div >
+    <div>
+        <h2>צפו בקליפ</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/OYZC0uFwJvw?si=E_1autw3EMt-i13b" frameborder="0" allow="accelerometer; autoplay; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+
+    <section class="songs-slider" style="background-color: #cc9e69;">
+        <h1 style="text-align: center; font-family: Rubik, sans-serif;">שירים נוספים</h1>
+        <div class="card__container swiper">
+          <div class="card__content">
+            <div class="swiper-wrapper">
+
+                <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="אליפלט.jpg" alt="image" class="card__img">
+                </div>
+              </article>
+
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="אליפלט.jpg" alt="image" class="card__img">
+                </div>
+              </article>
+
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="אליפלט.jpg" alt="image" class="card__img">
+                </div>
+              </article>
+
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="אליפלט.jpg" alt="image" class="card__img">
+                </div>
+              </article>
+
+              <article class="card__article swiper-slide">
+                <div class="card__image">
+                  <img src="אליפלט.jpg" alt="image" class="card__img">
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="swiper-button-next">
+            <i class="bi bi-chevron-right"></i>
+          </div>
+
+          <div class="swiper-button-prev">
+            <i class="bi bi-chevron-left"></i>
+          </div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+  let swiperCards = new Swiper(".card__content", {
+  loop: true,
+  loopAdditionalSlides: 5,
+  spaceBetween: 24,
+  grabCursor: true,
+  slidesPerView: 1.15,
+  centeredSlides: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: false,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  breakpoints: {
+    600: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 1,
+    },
+    968: {
+      slidesPerView: 3,
+    },
+  },
+});
+</script>
+
+    <script>
+        function openModal() {
+            document.getElementById("videoModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("videoModal").style.display = "none";
+        }
+
+        // סגירת המודאל בלחיצה מחוץ לתוכן שלו
+        window.onclick = function(event) {
+            const modal = document.getElementById("videoModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

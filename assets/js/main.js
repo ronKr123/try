@@ -1,15 +1,15 @@
 /*=============== SWIPER JS ===============*/
 let swiperCards = new Swiper(".card__content", {
   loop: true,
-  spaceBetween: 32,
+  loopAdditionalSlides: 5,
+  spaceBetween: 24,
   grabCursor: true,
-  slidesPerView: 1.2, // 🔥 כרטיס אחד + הצצה
-
-  centeredSlides: false, // 🔥 ממקם באמצע
+  slidesPerView: 1.15,
+  centeredSlides: true,
   autoplay: {
-    delay: 3000, // כל כמה זמן מתחלף (במילישניות)
-    disableOnInteraction: false, // לא עוצר אחרי לחיצה
-    pauseOnMouseEnter: true, // עוצר כשעוברים עם העכבר
+    delay: 3000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
 
   pagination: {
