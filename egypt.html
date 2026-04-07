@@ -38,11 +38,23 @@ background-size: cover;
   display: flex;
   justify-content: center; /* מרכז אופקית */
   align-items: center;     /* מרכז אנכית */
-  height: 35vh; /* גובה - אפשר לשנות */
+  height: 25vh; /* גובה - אפשר לשנות */
 }
 
 .center-image img {
-  max-width: 80%; /* שלא תהיה גדולה מדי */
+  max-width: 60%; /* שלא תהיה גדולה מדי */
+  height: auto;
+}
+
+.center-image-2 {
+  display: flex;
+  justify-content: center; /* מרכז אופקית */
+  align-items: center;     /* מרכז אנכית */
+  height: 20vh; /* גובה - אפשר לשנות */
+}
+
+.center-image-2 img {
+  max-width: 30%; /* שלא תהיה גדולה מדי */
   height: auto;
 }
 
@@ -50,6 +62,75 @@ background-size: cover;
   width: 100%;   /* תופס את כל הרוחב */
   height: auto;  /* שומר על יחס */
   display: block;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  max-width: 1500px;   /* מקטין את כל הגלריה */
+  margin: auto;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 694 / 452;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* אפקט הגדלה */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* טאבלט */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .center-image img {
+  max-width: 100%; /* שלא תהיה גדולה מדי */
+  height: auto;
+}
+
+header img {
+    height: 100%; /* גובה הלוגו */
+    width: auto; /* יחס צדדים נשמר */
+  }
+}
+
+/* מובייל */
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .card {
+    max-width: 90%;
+    margin: 20px auto;
+  }
+
+  .center-image img {
+  max-width: 100%; /* שלא תהיה גדולה מדי */
+  height: auto;
+}
+
+header img {
+    height: 100%; /* גובה הלוגו */
+    width: auto; /* יחס צדדים נשמר */
+  }
 }
 </style>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -65,15 +146,20 @@ background-size: cover;
 </header>
 
 <div class="center-image">
-  <img src="Untitled-removebg-preview.png" alt="תמונה מרכזית" draggable="false">
+  <img src="כותרת-removebg-preview.png" alt="תמונה מרכזית" draggable="false">
 </div>
+
+<!-- <div class="center-image-2">
+  <img src="פסח_שמח-removebg-preview.png" alt="תמונה מרכזית" draggable="false">
+</div> -->
+
 <section class="songs-slider">
         <div class="card__container swiper">
           <div class="card__content">
             <div class="swiper-wrapper">
               <article class="card__article swiper-slide">
                 <div class="card__image">
-                  <img src="ילדיסקו.jpg" alt="image" class="card__img">
+                  <img src="660001998_18579046639048241_3499671205768151861_n.jpg" alt="image" class="card__img">
                 </div>
               </article>
 
@@ -114,6 +200,24 @@ background-size: cover;
           <div class="swiper-pagination"></div>
         </div>
       </section>
+
+      <div class="center-image-2">
+  <img src="פינות_פסח-removebg-preview.png" alt="תמונה מרכזית" draggable="false">
+</div>
+
+      <div class="gallery">
+  <div class="card"><img src="שנקר.png" alt=""></div>
+  <div class="card"><img src="צדוק.png" alt=""></div>
+  <div class="card"><img src="פלד.png" alt=""></div>
+  <div class="card"><img src="מנדלוביץ.png" alt=""></div>
+  <div class="card"><img src="אשכנזי.png" alt=""></div>
+
+  <div class="card"><img src="אזרד.png" alt=""></div>
+  <div class="card"><img src="אמסלם.png" alt=""></div>
+  <div class="card"><img src="עבאס.png" alt=""></div>
+  <div class="card"><img src="בית אור.png" alt=""></div>
+  <div class="card"><img src="פוטש.png" alt=""></div>
+</div>
 
       <div class="bottom-image">
   <img src="Untitled11-removebg-preview.png" alt="footer image" draggable="false">

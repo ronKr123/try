@@ -105,7 +105,6 @@ transform: scale(1.1);
   font-size: 3rem;
   color: var(--second-color);
   display: none;
-  padding-bottom: 800px;
 }
 
 .swiper-button-prev {
